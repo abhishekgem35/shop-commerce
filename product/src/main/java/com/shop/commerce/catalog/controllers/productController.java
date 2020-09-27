@@ -41,7 +41,7 @@ public class productController {
 		ModelMapper modelMapper=new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
-		productDTO productDto=modelMapper.map(productReq, productDto.class);
+		productDTO productDto=modelMapper.map(productReq, productDTO.class);
 		productService.insertProduct(productDto);
 		return "Create user method invoked";
 		
