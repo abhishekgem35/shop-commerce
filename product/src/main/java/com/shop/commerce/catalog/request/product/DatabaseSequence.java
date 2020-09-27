@@ -1,4 +1,4 @@
-package com.shop.commerce.catalog.model;
+package com.shop.commerce.catalog.request.product;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.*;
