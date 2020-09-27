@@ -1,7 +1,6 @@
-package com.shop.commerce.catalog.request.category;
+package com.shop.commerce.catalog.request;
 
 import javax.persistence.Id;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -20,13 +19,11 @@ import lombok.NoArgsConstructor;
 @Builder
 public class CategoryRequestModel {
 	
-	@Transient
-    public static final String SEQUENCE_NAME = "category";
 	
 	@NotNull(message="categoryId cannot be null")
 	@Id
 	@Indexed(unique=true)
-	private long categoryId;
+	private String categoryId;
 	
 	@NotNull(message="categoryDescription cannot be null")
 	private String categoryDescription;

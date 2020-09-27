@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shop.commerce.catalog.data.repository.ProductRepository;
-import com.shop.commerce.catalog.service.SequenceGeneratorService;
+import com.shop.commerce.catalog.request.*;
 
 @RestController
 @RequestMapping("/category")
@@ -20,11 +20,6 @@ public class CategoryController {
 	@Autowired
 	private ProductRepository productRepository;
 
-
-
-	@Autowired
-	private SequenceGeneratorService sequenceGeneratorService;
-	
 	@Autowired
 	private Environment env;
 	
@@ -34,25 +29,9 @@ public class CategoryController {
 		return "Product Service Up on port" +env.getProperty("local.server.port");
 	}
 	
-	@PostMapping
-	public ProductRequestModel insertProduct(@Valid @RequestBody ProductRequestModel productReq)
-	{
-		productReq.setProductId(sequenceGeneratorService.generateSequence(ProductRequestModel.SEQUENCE_NAME));
-		return productRepository.save(productReq);
-		
-	}
 
-	@RequestMapping
-	public String showProduct(String productId)
-	{
-		return productId;
-		
-	}
-	
-	
-	
 	@GetMapping
-	public String showAllProduct(String categoryId)
+	public String listAllProduct(String categoryId)
 	{
 		return categoryId ;
 		

@@ -37,4 +37,10 @@ public class ProductServiceImpl implements ProductService {
 		return null;
 
 }
+
+	@Override
+	public ProductDTO getProduct(String productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
