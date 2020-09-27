@@ -1,4 +1,4 @@
-package com.shop.commerce.catalog.request.product;
+package com.shop.commerce.catalog.request;
 
 import java.util.Date;
 
@@ -30,7 +30,7 @@ public class ProductRequestModel {
 	@NotNull(message="productId cannot be null")
 	@Id
 	@Indexed(unique=true)
-	private long productId;
+	private String productId;
 	
 	@NotNull(message="productDesc cannot be null")
 	private String productDesc;

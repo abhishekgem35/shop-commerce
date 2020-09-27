@@ -1,7 +1,9 @@
 package com.shop.commerce.catalog.service;
 
-import java.io.Serializable;
+import com.shop.commerce.catalog.shared.ProductDTO;
 
 public interface ProductService {
+
+	ProductDTO insertProduct(ProductDTO productInfo);
 
 }
