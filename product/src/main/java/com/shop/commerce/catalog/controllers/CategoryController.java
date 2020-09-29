@@ -1,24 +1,20 @@
 package com.shop.commerce.catalog.controllers;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.shop.commerce.catalog.data.repository.CategoryRepository;
 import com.shop.commerce.catalog.data.repository.ProductRepository;
-import com.shop.commerce.catalog.request.*;
 
 @RestController
 @RequestMapping("/category")
 public class CategoryController {
 	
 	@Autowired
-	private ProductRepository productRepository;
+	private CategoryRepository categoryRepository;
 
 	@Autowired
 	private Environment env;
@@ -26,7 +22,7 @@ public class CategoryController {
 	@GetMapping("/status")
 	public String status()
 	{
-		return "Product Service Up on port" +env.getProperty("local.server.port");
+		return "Category Service Up on port" +env.getProperty("local.server.port");
 	}
 	
 

@@ -7,34 +7,35 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.shop.commerce.catalog.data.entity.CategoryEntity;
 import com.shop.commerce.catalog.data.entity.ProductEntity;
+import com.shop.commerce.catalog.data.repository.CategoryRepository;
 import com.shop.commerce.catalog.data.repository.ProductRepository;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+public class CategoryServiceImpl implements CategoryService {
 	
-	ProductRepository productRepository;
+	CategoryRepository categoryRepository;
 	
 	@Autowired
-	public ProductServiceImpl (ProductRepository productRepository)
+	public CategoryServiceImpl (CategoryRepository categoryRepository)
 	{
-		this.productRepository=productRepository;
+		this.categoryRepository=categoryRepository;
 	}
 	
 	@Override
-	public ProductEntity insertProduct(ProductEntity productInfo) {
+	public CategoryEntity insertCategory(CategoryEntity categoryInfo) {
 
-		
 		ModelMapper modelMapper=new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-		ProductEntity productEntity=modelMapper.map(productInfo, ProductEntity.class);
-		productRepository.save(productEntity);
+		CategoryEntity categoryEntity=modelMapper.map(categoryInfo, CategoryEntity.class);
+		categoryRepository.save(categoryEntity);
 		return null;
 
 }
 
 	@Override
-	public ProductEntity getProduct(String productId) {
+	public CategoryEntity getProduct(String categoryId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
