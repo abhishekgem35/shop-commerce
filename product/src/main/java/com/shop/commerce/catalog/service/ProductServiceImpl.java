@@ -5,9 +5,7 @@ import java.util.UUID;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mapping.PersistentEntity;
 import org.springframework.stereotype.Service;
-
 
 import com.shop.commerce.catalog.data.entity.ProductEntity;
 import com.shop.commerce.catalog.data.repository.ProductRepository;
@@ -25,7 +23,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public ProductDTO insertProduct(ProductDTO productInfo) {
+	public ProductEntity insertProduct(ProductEntity productInfo) {
 	
 		
 		productInfo.setProductId(UUID.randomUUID().toString());
@@ -39,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
 }
 
 	@Override
-	public ProductDTO getProduct(String productId) {
+	public ProductEntity getProduct(String productId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

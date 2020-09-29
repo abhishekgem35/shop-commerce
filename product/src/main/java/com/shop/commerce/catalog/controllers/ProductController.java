@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.shop.commerce.catalog.data.entity.ProductEntity;
 import com.shop.commerce.catalog.request.ProductRequestModel;
 import com.shop.commerce.catalog.response.ProductResponseModel;
 import com.shop.commerce.catalog.service.ProductService;
-import com.shop.commerce.catalog.shared.ProductDTO;
 
 @RestController
 @RequestMapping("/product")
@@ -47,7 +47,7 @@ public class ProductController {
 		ModelMapper modelMapper=new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
-		ProductDTO productDto=modelMapper.map(productReq, ProductDTO.class);
+		ProductEntity productDto=modelMapper.map(productReq, ProductEntity.class);
 		productService.insertProduct(productDto);
 		return "Product Inserted";
 		
@@ -62,7 +62,7 @@ public class ProductController {
 			
 		}
 		
-		ProductDTO productDto=productService.getProduct(productId);
+		ProductEntity productDto=productService.getProduct(productId);
 		ProductResponseModel productInfo=new ModelMapper().map(productDto, ProductResponseModel.class);
 		return ResponseEntity.status(HttpStatus.OK).body(productInfo);
 		

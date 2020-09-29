@@ -1,9 +1,9 @@
 package com.shop.commerce.catalog.service;
 
-import com.shop.commerce.catalog.shared.ProductDTO;
+import com.shop.commerce.catalog.data.entity.ProductEntity;
 
 public interface ProductService {
 
-	ProductDTO insertProduct(ProductDTO productInfo);
-	ProductDTO getProduct(String productId);
+	ProductEntity insertProduct(ProductEntity productInfo);
+	ProductEntity getProduct(String productId);
 }
