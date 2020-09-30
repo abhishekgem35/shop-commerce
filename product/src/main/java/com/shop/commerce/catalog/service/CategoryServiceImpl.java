@@ -2,6 +2,7 @@ package com.shop.commerce.catalog.service;
 
 import java.util.UUID;
 
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import com.shop.commerce.catalog.data.entity.ProductEntity;
 import com.shop.commerce.catalog.data.repository.CategoryRepository;
 import com.shop.commerce.catalog.data.repository.ProductRepository;
 
+@Slf4j
 @Service
 public class CategoryServiceImpl implements CategoryService {
 	

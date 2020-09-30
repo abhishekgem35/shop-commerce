@@ -1,9 +1,9 @@
 package com.shop.commerce.catalog.data.repository;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.shop.commerce.catalog.data.entity.CategoryEntity;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CategoryRepository extends MongoRepository<CategoryEntity ,Long> {
+public interface CategoryRepository extends MongoRepository<CategoryEntity,Long> {
 
 }

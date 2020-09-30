@@ -2,6 +2,7 @@ package com.shop.commerce.catalog.controllers;
 
 import javax.validation.Valid;
 
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import com.shop.commerce.catalog.request.ProductRequestModel;
 import com.shop.commerce.catalog.response.ProductResponseModel;
 import com.shop.commerce.catalog.service.ProductService;
 
+@Slf4j
 @RestController
 @RequestMapping("/product")
 public class ProductController {

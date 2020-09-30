@@ -1,5 +1,6 @@
 package com.shop.commerce.catalog.controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.shop.commerce.catalog.data.repository.CategoryRepository;
 import com.shop.commerce.catalog.data.repository.ProductRepository;
 
+@Slf4j
 @RestController
 @RequestMapping("/category")
 public class CategoryController {

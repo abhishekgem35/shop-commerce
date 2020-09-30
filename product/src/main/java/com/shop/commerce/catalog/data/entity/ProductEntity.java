@@ -3,6 +3,7 @@ package com.shop.commerce.catalog.data.entity;
 import java.util.Date;
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Transient;
@@ -24,6 +25,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Entity
 public class ProductEntity implements Serializable {
 
 	/**
