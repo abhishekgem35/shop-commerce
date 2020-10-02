@@ -33,14 +33,16 @@ public class ProductEntity implements Serializable {
 	 */
 	private static final long serialVersionUID = -2731425678149216053L;
 
-	@Transient
-    public static final String SEQUENCE_NAME = "prod";
-	
+
+	@Id
+	@GeneratedValue
+	private Long id;
+
 	@NotNull(message="productId cannot be null")
 	@Id
 	@Indexed(unique=true)
-	@GeneratedValue
-	private long productId;
+
+	private String productId;
 	
 	@NotNull(message="productDesc cannot be null")
 	private String productDesc;

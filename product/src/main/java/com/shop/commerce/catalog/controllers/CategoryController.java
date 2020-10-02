@@ -28,7 +28,7 @@ public class CategoryController {
 	}
 	
 
-	@GetMapping
+/*	@GetMapping
 	public String listAllProduct(String categoryId)
 	{
 		return categoryId ;
@@ -47,5 +47,5 @@ public class CategoryController {
 	{
 		return productId ;
 		
-	}
+	} */
 }

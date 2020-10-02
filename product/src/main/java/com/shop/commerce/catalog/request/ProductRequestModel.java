@@ -16,7 +16,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Document(collection="product")
 
 @Data
 @AllArgsConstructor
@@ -24,12 +23,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ProductRequestModel {
 	
-	@Transient
-    public static final String SEQUENCE_NAME = "prod";
-	
 	@NotNull(message="productId cannot be null")
-	@Id
-	@Indexed(unique=true)
 	private String productId;
 	
 	@NotNull(message="productDesc cannot be null")

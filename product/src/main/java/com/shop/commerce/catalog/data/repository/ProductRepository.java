@@ -8,4 +8,5 @@ import com.shop.commerce.catalog.data.entity.ProductEntity;
 @Repository
 public interface ProductRepository extends MongoRepository<ProductEntity ,Long> {
 
+    ProductEntity findById(String productId);
 }

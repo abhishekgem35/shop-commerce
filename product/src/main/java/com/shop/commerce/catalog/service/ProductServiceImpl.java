@@ -1,6 +1,6 @@
 package com.shop.commerce.catalog.service;
 
-import java.util.UUID;
+import java.util.Optional;
 
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -34,10 +34,11 @@ public class ProductServiceImpl implements ProductService {
 		return null;
 
 }
-
 	@Override
-	public ProductEntity getProduct(String productId) {
-		// TODO Auto-generated method stub
-		return null;
+	public ProductEntity getProduct(String productId)
+	{
+
+	return null;
 	}
+
 }

@@ -2,6 +2,7 @@ package com.shop.commerce.catalog.controllers;
 
 import javax.validation.Valid;
 
+import com.shop.commerce.catalog.request.CreateProductRequestModel;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -44,7 +45,7 @@ public class ProductController {
 	@PostMapping(value="/product" ,
 			consumes = { MediaType.APPLICATION_JSON_VALUE } ,
 			produces = { MediaType.APPLICATION_JSON_VALUE } )
-	public String insertProduct(@Valid @RequestBody ProductRequestModel productReq)
+	public String insertProduct(@Valid @RequestBody CreateProductRequestModel productReq)
 	{
 		ModelMapper modelMapper=new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -60,29 +61,13 @@ public class ProductController {
 	{
 		
 		if(productId==null) {
-			//Exception handling
-			
+			//Exception Handling
 		}
-		
-		ProductEntity productDto=productService.getProduct(productId);
-		ProductResponseModel productInfo=new ModelMapper().map(productDto, ProductResponseModel.class);
-		return ResponseEntity.status(HttpStatus.OK).body(productInfo);
-		
-	}
-	
-	
-	
-	@RequestMapping 
-	public String updateProduct(String productId)
-	{
-		return productId ;
+		ProductEntity productDto= productService.getProduct(productId);
+		ProductResponseModel productResponse=new ModelMapper().map(productDto, ProductResponseModel.class);
+		return ResponseEntity.status(HttpStatus.OK).body(productResponse);
 		
 	}
 	
-	@RequestMapping
-	public String deleteProduct(String productId)
-	{
-		return productId ;
-		
-	}
+
 }

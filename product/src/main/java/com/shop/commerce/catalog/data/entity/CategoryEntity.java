@@ -21,9 +21,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 public class CategoryEntity {
-	
-	@Transient
-    public static final String SEQUENCE_NAME = "category";
+
 	
 	@NotNull(message="categoryId cannot be null")
 	@Id
